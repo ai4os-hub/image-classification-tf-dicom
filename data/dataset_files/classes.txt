@@ -1,2 +1,2 @@
-nopato
+no_pathology
 pneumonia
