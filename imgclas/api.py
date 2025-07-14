@@ -38,7 +38,9 @@ from webargs import fields
 from imgclas import paths, utils, config, test_utils
 from imgclas.data_utils import load_class_names, load_class_info, mount_nextcloud
 from imgclas.train_runfile import train_fn
+from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parents[1]
 
 # TODO: Move to proper marshalling for arguments
 # The point is that some fields need additional information than the one that is contained in the config.yaml
@@ -448,33 +450,33 @@ def get_predict_args():
     return populate_parser(parser, default_conf)
 
 
-def get_metadata(distribution_name='imgclas'):
+def get_metadata():
     """
-    Function to read metadata
+    DO NOT REMOVE - All modules should have a get_metadata() function
+    with appropriate keys.
     """
+    distros = list(pkg_resources.find_distributions(str(BASE_DIR), only=True))
+    if len(distros) == 0:
+        raise Exception("No package found.")
+    pkg = distros[0]  # if several select first
 
-    pkg = pkg_resources.get_distribution(distribution_name)
-    meta = {
-        'Name': None,
-        'Version': None,
-        'Summary': None,
-        'Home-page': None,
-        'Author': None,
-        'Author-email': None,
-        'License': None,
+    meta_fields = {
+        "Name": None,
+        "Version": None,
+        "Summary": None,
+        "Home-page": None,
+        "Author": None,
+        "Author-email": None,
+        "License": None,
     }
-
+    meta = {}
     for line in pkg.get_metadata_lines("PKG-INFO"):
-        for par in meta:
-            if line.startswith(par):
+       # line_low = line.lower()  # to avoid inconsistency due to letter cases
+        for k in meta_fields:
+            if line.startswith(k + ":"):
                 _, value = line.split(": ", 1)
-                meta[par] = value
-
-    # Update information with Docker info (provided as 'CONTAINER_*' env variables)
-    r = re.compile("^CONTAINER_(.*?)$")
-    container_vars = list(filter(r.match, list(os.environ)))
-    for var in container_vars:
-        meta[var.capitalize()] = os.getenv(var)
+                meta[k] = value
+    print(meta)            
 
     return meta
 
