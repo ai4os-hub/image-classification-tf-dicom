@@ -68,12 +68,12 @@ and open http://0.0.0.0:5000/ui and look for the methods belonging to the `imgcl
 
 ### Docker installation
 
-We have also prepared a ready-to-use [Docker container](https://github.com/deephdc/DEEP-OC-image-classification-tf-dicom) to
+We have also prepared a ready-to-use Docker container to
 run this module. To run it:
 
 ```bash
 docker search deephdc
-docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 deephdc/deep-oc-image-classification-tf-dicom
+docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 image-classification-tf-dicom
 ```
 
 Now open http://0.0.0.0:5000/ui and look for the methods belonging to the `imgclas` module.
