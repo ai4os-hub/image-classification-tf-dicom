@@ -11,7 +11,7 @@ References
 https://github.com/keras-team/keras/issues/5920#issuecomment-328890905
 """
 
-from tensorflow.python.keras import optimizers
+from tensorflow.keras import optimizers
 from tensorflow.python.keras import backend as K
 from tensorflow.python.ops import state_ops
 from tensorflow.python.ops import math_ops
