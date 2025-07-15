@@ -1,7 +1,6 @@
-# Docker image for CI testing of the DEEPaaS API
-# Note there is probably no gpu in the CI server
 ARG tag=1.14.0-py3
 FROM tensorflow/tensorflow:${tag}
 RUN pip3 install --no-cache-dir --upgrade pip setuptools wheel
-RUN pip3 install --no-cache-dir tox
+RUN pip3 install --no-cache-dir tox pbr
+ENV PBR_VERSION=1.0.0
 CMD ["sleep", "infinity"]
