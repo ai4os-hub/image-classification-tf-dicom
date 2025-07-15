@@ -30,4 +30,4 @@ environment:
   GIT_COMMITTER_EMAIL: "iheredia@ifca.unican.es"
   LANG: C.UTF-8
 
-timeout: 1200
+timeout: 600
