@@ -54,7 +54,7 @@ You can find more information about it in the [DEEP Marketplace](https://marketp
 To start using this framework clone the repo and download the [default weights](https://api.cloud.ifca.es:8080/swift/v1/imagenet-tf/default_imagenet.tar.xz):
 
 ```bash
-git clone https://github.com/deephdc/image-classification-tf-dicom
+git clone https://github.com/ai4os-hub/image-classification-tf-dicom
 cd image-classification-tf-dicom
 pip install -e .
 curl -o ./models/default.tar.gz https://cephrgw01.ifca.es:8080/swift/v1/imagenet-tf/default_imagenet.tar.xz
@@ -72,7 +72,7 @@ We have also prepared a ready-to-use Docker container to
 run this module. To run it:
 
 ```bash
-docker search deephdc
+docker search ai4os-hub
 docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 image-classification-tf-dicom
 ```
 
