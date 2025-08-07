@@ -1,7 +1,7 @@
 DEEP Open Catalogue: Medical Image Classification
 =========================================
 
-[![Build Status](https://jenkins.indigo-datacloud.eu/buildStatus/icon?job=Pipeline-as-code/DEEP-OC-org/image-classification-tf-dicom/master)](https://jenkins.indigo-datacloud.eu/job/Pipeline-as-code/job/DEEP-OC-org/job/image-classification-tf/job/master/)
+[![Build Status](https://jenkins.cloud.ai4eosc.eu/job/AI4OS-HUB-TEST/job/image-classification-tf-dicom/job/main/)](https://jenkins.cloud.ai4eosc.eu/job/AI4OS-HUB-TEST/job/image-classification-tf-dicom/job/main/)
 
 ---
 > This is an updated version of the image classification module with support image classification with DICOM data.
