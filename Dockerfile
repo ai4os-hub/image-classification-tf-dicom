@@ -68,7 +68,7 @@ RUN git clone https://github.com/deephdc/deep-start /srv/.deep-start && \
     ln -s /srv/.deep-start/run_jupyter.sh /usr/local/bin/run_jupyter
 
 # Install FLAAT (FLAsk support for handling Access Tokens)
-RUN RUN pip install --upgrade pip && \
+RUN pip install --upgrade pip && \
     pip install --no-cache-dir flaat && \
     rm -rf /root/.cache/pip/* && \
     rm -rf /tmp/*
