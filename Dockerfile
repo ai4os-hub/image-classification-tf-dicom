@@ -36,7 +36,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     rm -rf /tmp/* && \
     python --version && \
     pip --version
-
+RUN apt-get update && apt-get install -y libgl1
 # Set LANG environment
 ENV LANG C.UTF-8
 
